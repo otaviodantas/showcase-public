@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://otaviodantas.com/posts/2021/08/hugo-testing/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://otaviodantas.com/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://otaviodantas.com/posts/</loc>
+    <lastmod>2021-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://otaviodantas.com/about/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://otaviodantas.com/categorias/</loc>
+  </url>
+  
+  <url>
+    <loc>https://otaviodantas.com/s%C3%A9ries/</loc>
+  </url>
+  
+  <url>
+    <loc>https://otaviodantas.com/tags/</loc>
+  </url>
+  
+</urlset>
