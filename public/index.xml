@@ -7,19 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://otaviodantas.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo testing</title>
-      <link>https://otaviodantas.com/posts/2021/08/hugo-testing/</link>
-      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      <title>Como fazer seu primeiro modelo de Machine Learning</title>
+      <link>https://otaviodantas.com/posts/2020/03/como-fazer-seu-primeiro-modelo-de-machine-learning/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://otaviodantas.com/posts/2021/08/hugo-testing/</guid>
-      <description>Introduction Ce tutoriel vous montrera comment créer un thème simple pour Hugo. Je suppose que vous êtes familier avec HTML, la ligne de commande bash, et que vous êtes à l&amp;rsquo;aise avec Markdown pour formater le contenu. Je vais expliquer comment Hugo utilise des modèles et comment vous pouvez organiser vos modèles pour créer un thème. Je ne couvrirai pas l&amp;rsquo;utilisation de CSS pour styliser votre thème.
-Nous allons commencer par créer un nouveau site avec un modèle très basique.</description>
+      <guid>https://otaviodantas.com/posts/2020/03/como-fazer-seu-primeiro-modelo-de-machine-learning/</guid>
+      <description>Exemplo simples de como implementar uma base de dados comum, em um modelo de Machine Learning que determinará se ele é um vinho do tipo Branco ou Tinto usando o JupyterLab. Fonte: Studio Ingrid Picanyol(BeHance). Para começar vamos instalar nosso ambiente de programação, o JupyterLab. O Jupyter é uma iniciativa cem por cento open source, que visa o suporte para o estudo e desenvolvimento de ciência de dados com suporte para várias linguagens.</description>
     </item>
     
     <item>

@@ -1,4 +1,4 @@
-baseURL = "https://otaviodantas.com"
+baseURL = "https://otaviodantas.com/"
 title   = "Otávio Mendonça"
 languageCode = "pt-BR"
 theme = "hello-friend-ng"
@@ -10,7 +10,7 @@ paginate  = 10
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
-# googleAnalytics = ""
+googleAnalytics = "G-H1W9DX62KL"
 # disqusShortname = ""
 
 archetypeDir = "archetypes"
@@ -44,8 +44,8 @@ disableHugoGeneratorInject = false
 
 [taxonomies]
   tag      = "tags"
-  category = "categorias"
-  series   = "séries"
+  category = "category"
+  series   = "series"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -170,16 +170,21 @@ disableHugoGeneratorInject = false
 
 [languages]
   [languages.en]
-    subtitle  = "Testando em Português"
+    subtitle  = "Otávio Dantas"
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     
 [menu]
   [[menu.main]]
-    identifier = "sobre"
-    name       = "Sobre"
+    identifier = "about"
+    name       = "About"
     url        = "about/"
   [[menu.main]]
     identifier = "posts"
     name       = "Posts"
     url        = "posts/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
