@@ -1,14 +1,15 @@
 +++
-categories = ["Python", "Machine Learning"]
+categories = ["Development"]
 date = "2020-03-25"
 description = "Como fazer seu primeiro modelo de Machine Learning"
-featured = "static/image1.jpg"
-featuredalt = "sl"
-featuredpath = "date"
+featured = "Python"
+featuredalt = ""
+featuredpath = ""
 linktitle = ""
 title = "Como fazer seu primeiro modelo de Machine Learning"
-slug = "asdasda"
+slug = ""
 type = "post"
+tags = ["Python", "Machine Learning"]
 +++
 
 <p style='text-align: justify;'>

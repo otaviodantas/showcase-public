@@ -34,18 +34,17 @@ disable404     = false
 disableHugoGeneratorInject = false
 
 [permalinks]
-  posts = "/posts/:year/:month/:title/"
+  posts = "/posts/:title/"
 
 [author]
-  name = "Jane Doe"
+  name = "Otávio Mendonça"
 
 [blackfriday]
   hrefTargetBlank = true
 
 [taxonomies]
   tag      = "tags"
-  category = "category"
-  series   = "series"
+  category = "categories"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -55,7 +54,7 @@ disableHugoGeneratorInject = false
 
   # Metadata mostly used in document's head
   # 
-  description = "Nice theme for homepages and blogs"
+  description = ""
   keywords = ""
   images = [""]
 
@@ -64,7 +63,7 @@ disableHugoGeneratorInject = false
   homeSubtitle = "Software Developer"
 
   # Set a background for the homepage
-  backgroundImage = "/static/pexels-marco-milanesi-5899780.jpg"
+  backgroundImage = ""
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   #
@@ -98,7 +97,7 @@ disableHugoGeneratorInject = false
 
   # Toggle this option need to rebuild SCSS, requires extended version of Hugo
   #
-  justifyContent = false  # Set "text-align: justify" to .post-content.
+  justifyContent = true  # Set "text-align: justify" to .post-content.
 
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
