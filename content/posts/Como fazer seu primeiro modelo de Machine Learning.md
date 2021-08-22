@@ -1,9 +1,9 @@
 +++
 categories = ["Python", "Machine Learning"]
 date = "2020-03-25"
-# description = "Como fazer seu primeiro modelo de Machine Learning"
+description = "Como fazer seu primeiro modelo de Machine Learning"
 featured = "static/image1.jpg"
-featuredalt = "testes"
+featuredalt = "sl"
 featuredpath = "date"
 linktitle = ""
 title = "Como fazer seu primeiro modelo de Machine Learning"
