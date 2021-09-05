@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Otávio Mendonça</title>
+    <link>https://otaviodantas.com/categories/development/</link>
+    <description>Recent content in Development on Otávio Mendonça</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://otaviodantas.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A arte de Iterar, em Python.</title>
+      <link>https://otaviodantas.com/artigos/a-arte-de-iterar-em-python/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/a-arte-de-iterar-em-python/</guid>
+      <description>Illustration by Natasha Remarchuk from icons8  Quanto mais mergulhamos em alguma linguagem, começamos a busca por entender o por que que as coisas funcionam dessa ou daquela forma. Hoje trouxe um conceito que se ouve falar bem no inicio da programação, mas que passa despercebido até nos depararmos com o nome dele associado a um erro. TypeError: list object is not an iterator Conceito Formalmente falando, iteradores são atributos de classe que o tornam “percorriveis”, ou seja, é possível acessar cada parte da coleção de forma singular.</description>
+    </item>
+    
+    <item>
+      <title>Gerador de Dataset para Processamento de Linguagem Natural (PLN)</title>
+      <link>https://otaviodantas.com/artigos/gerador-de-dataset-para-processamento-de-linguagem/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/gerador-de-dataset-para-processamento-de-linguagem/</guid>
+      <description>fonte: icons8  Introdução Este artigo vai mostrar como foi o processo de desenvolvimento e o resultado de um programa em python, com o intuito de gerar um dataset simples, com um conjunto de frases extraídas do Twitter, por meio da API disponibilizada pelo próprio Twitter. No projeto foi usado conceitos básicos de Python e algumas bibliotecas como: Tweepy e NLTK. Problemática Eu tenho um grande apreço pelo campo de Machine Learning, e por conta disso, iniciei meus estudos na área por um ramo com grande notoriedade atualmente, o NLP (Natural Lenguange Process).</description>
+    </item>
+    
+    <item>
+      <title>O básico do Docker</title>
+      <link>https://otaviodantas.com/artigos/docker/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/docker/</guid>
+      <description>Contextualizando Durante a minha graduação eu sempre ouvi, e continuo ouvindo, sobre o Docker, e como ele é isso e aquilo. Esse assunto sempre me deixou com uma pulga atrás da orelha, então desta vez eu decidi estudar um pouco mais sobre como surgiu a tecnologia e como ela impactou todo o ecossistema de desenvolvimento. A história do Docker. Para contar a história do Docker antes é preciso entender como as coisas funcionavam antes dele.</description>
+    </item>
+    
+    <item>
+      <title>Web Scraping na página da OLX</title>
+      <link>https://otaviodantas.com/artigos/web-scraping/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/web-scraping/</guid>
+      <description>Mas oque é isso? O método de web scraping consiste em obter dados de uma página web, navegando pelo seu código HTML e capturando os dados que interessam, para posteriormente usa-los em outras aplicações.
+Um exemplo da utilização dessa ferramenta pode ser vista quando vamos até um site de vendas de algum produto, e queremos prever o preço desse produto daqui a alguns dias ou meses. Para isso, aplicamos o web scraping para obter os dados dos preços que estão sendo mostrados no site.</description>
+    </item>
+    
+    <item>
+      <title>Como fazer seu primeiro modelo de Machine Learning</title>
+      <link>https://otaviodantas.com/artigos/primeiro-modelo-de-machine-learning/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/primeiro-modelo-de-machine-learning/</guid>
+      <description>Exemplo simples de como implementar uma base de dados comum, em um modelo de Machine Learning que determinará se ele é um vinho do tipo Branco ou Tinto usando o JupyterLab. Fonte: Studio Ingrid Picanyol(BeHance). Para começar vamos instalar nosso ambiente de programação, o JupyterLab. O Jupyter é uma iniciativa cem por cento open source, que visa o suporte para o estudo e desenvolvimento de ciência de dados com suporte para várias linguagens.</description>
+    </item>
+    
+  </channel>
+</rss>

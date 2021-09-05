@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NLP on Otávio Mendonça</title>
+    <link>https://otaviodantas.com/tags/nlp/</link>
+    <description>Recent content in NLP on Otávio Mendonça</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://otaviodantas.com/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gerador de Dataset para Processamento de Linguagem Natural (PLN)</title>
+      <link>https://otaviodantas.com/artigos/gerador-de-dataset-para-processamento-de-linguagem/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/gerador-de-dataset-para-processamento-de-linguagem/</guid>
+      <description>fonte: icons8  Introdução Este artigo vai mostrar como foi o processo de desenvolvimento e o resultado de um programa em python, com o intuito de gerar um dataset simples, com um conjunto de frases extraídas do Twitter, por meio da API disponibilizada pelo próprio Twitter. No projeto foi usado conceitos básicos de Python e algumas bibliotecas como: Tweepy e NLTK. Problemática Eu tenho um grande apreço pelo campo de Machine Learning, e por conta disso, iniciei meus estudos na área por um ramo com grande notoriedade atualmente, o NLP (Natural Lenguange Process).</description>
+    </item>
+    
+  </channel>
+</rss>

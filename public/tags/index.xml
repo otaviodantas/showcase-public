@@ -5,11 +5,52 @@
     <link>https://otaviodantas.com/tags/</link>
     <description>Recent content in Tags on Otávio Mendonça</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://otaviodantas.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://otaviodantas.com/tags/python/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/tags/python/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://otaviodantas.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning</title>
+      <link>https://otaviodantas.com/tags/machine-learning/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>NLP</title>
+      <link>https://otaviodantas.com/tags/nlp/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://otaviodantas.com/tags/docker/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BeautifulSoup</title>
+      <link>https://otaviodantas.com/tags/beautifulsoup/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/tags/beautifulsoup/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

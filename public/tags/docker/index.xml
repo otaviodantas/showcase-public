@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Otávio Mendonça</title>
+    <link>https://otaviodantas.com/tags/docker/</link>
+    <description>Recent content in Docker on Otávio Mendonça</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://otaviodantas.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>O básico do Docker</title>
+      <link>https://otaviodantas.com/artigos/docker/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/docker/</guid>
+      <description>Contextualizando Durante a minha graduação eu sempre ouvi, e continuo ouvindo, sobre o Docker, e como ele é isso e aquilo. Esse assunto sempre me deixou com uma pulga atrás da orelha, então desta vez eu decidi estudar um pouco mais sobre como surgiu a tecnologia e como ela impactou todo o ecossistema de desenvolvimento. A história do Docker. Para contar a história do Docker antes é preciso entender como as coisas funcionavam antes dele.</description>
+    </item>
+    
+  </channel>
+</rss>

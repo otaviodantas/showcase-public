@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BeautifulSoup on Otávio Mendonça</title>
+    <link>https://otaviodantas.com/tags/beautifulsoup/</link>
+    <description>Recent content in BeautifulSoup on Otávio Mendonça</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://otaviodantas.com/tags/beautifulsoup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web Scraping na página da OLX</title>
+      <link>https://otaviodantas.com/artigos/web-scraping/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://otaviodantas.com/artigos/web-scraping/</guid>
+      <description>Mas oque é isso? O método de web scraping consiste em obter dados de uma página web, navegando pelo seu código HTML e capturando os dados que interessam, para posteriormente usa-los em outras aplicações.
+Um exemplo da utilização dessa ferramenta pode ser vista quando vamos até um site de vendas de algum produto, e queremos prever o preço desse produto daqui a alguns dias ou meses. Para isso, aplicamos o web scraping para obter os dados dos preços que estão sendo mostrados no site.</description>
+    </item>
+    
+  </channel>
+</rss>

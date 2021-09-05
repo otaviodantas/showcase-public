@@ -1,6 +1,7 @@
 baseURL = "https://otaviodantas.com/"
 title   = "Otávio Mendonça"
-languageCode = "pt-BR"
+languageCode = "pt-br"
+defaultContentLanguage="pt"
 theme = "hello-friend-ng"
 
 PygmentsCodeFences = true
@@ -10,8 +11,7 @@ paginate  = 10
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
-googleAnalytics = "G-H1W9DX62KL"
-# disqusShortname = ""
+disqusShortname = "otaviodantas-com"
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -34,7 +34,7 @@ disable404     = false
 disableHugoGeneratorInject = false
 
 [permalinks]
-  posts = "/posts/:title/"
+  posts = "/articles/:title/"
 
 [author]
   name = "Otávio Mendonça"
@@ -47,6 +47,7 @@ disableHugoGeneratorInject = false
   category = "categories"
 
 [params]
+  googleAnalyticsID = "G-20V0R8NYR0"
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "01-02-2006"
@@ -54,16 +55,16 @@ disableHugoGeneratorInject = false
 
   # Metadata mostly used in document's head
   # 
-  description = ""
+  description = "Blog"
   keywords = ""
   images = [""]
 
   # Home subtitle of the index page.
   #
-  homeSubtitle = "Software Developer"
+  homeSubtitle = "Desenvolvedor de Software"
 
   # Set a background for the homepage
-  backgroundImage = ""
+  # backgroundImage = ""
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   #
@@ -173,15 +174,20 @@ disableHugoGeneratorInject = false
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     
+  [languages.pt]
+    subtitle  = ""
+    weight    = 1
+    copyright = ''
+  
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "about/"
+    identifier = "sobre"
+    name       = "Sobre"
+    url        = "sobre/"
   [[menu.main]]
-    identifier = "posts"
-    name       = "Posts"
-    url        = "posts/"
+    identifier = "artigos"
+    name       = "Artigos"
+    url        = "artigos/"
 
 [markup]
   [markup.goldmark]

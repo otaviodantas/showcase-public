@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Otávio Mendonça ">
+<meta name="description"
+    content="Como fazer seu primeiro modelo de Machine Learning" />
+<meta name="keywords"
+    content=", Python, Machine Learning" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://otaviodantas.com/artigos/primeiro-modelo-de-machine-learning/" />
+
+
+<title>
+    
+    Como fazer seu primeiro modelo de Machine Learning | Otávio Mendonça
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://otaviodantas.com/main.c56d17f0a8151dc3fb01bf191ffb8edb734f3eb84f8c69d198a1a3a585ad89f9.css">
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://otaviodantas.com/%20apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://otaviodantas.com/%20favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://otaviodantas.com/%20favicon-16x16.png">
+<link rel="manifest" href="https://otaviodantas.com/%20site.webmanifest">
+<link rel="mask-icon" href="https://otaviodantas.com/%20safari-pinned-tab.svg" color="#1b1c1d">
+<link rel="shortcut icon" href="https://otaviodantas.com/%20favicon.ico">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<meta name="theme-color" content="#1b1c1d">
+
+
+<meta itemprop="name" content="Como fazer seu primeiro modelo de Machine Learning">
+<meta itemprop="description" content="Como fazer seu primeiro modelo de Machine Learning">
+<meta itemprop="datePublished" content="2020-03-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-03-25T00:00:00+00:00" />
+<meta itemprop="wordCount" content="809">
+<meta itemprop="image" content="https://otaviodantas.com/"/>
+
+
+
+<meta itemprop="keywords" content="Python,Machine Learning," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://otaviodantas.com/"/>
+
+<meta name="twitter:title" content="Como fazer seu primeiro modelo de Machine Learning"/>
+<meta name="twitter:description" content="Como fazer seu primeiro modelo de Machine Learning"/>
+
+
+
+
+
+
+<meta property="article:section" content="Development" />
+
+
+
+<meta property="article:published_time" content="2020-03-25 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-20V0R8NYR0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://otaviodantas.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">~</span>
+            <span class="logo__text">cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#FFD539;
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://otaviodantas.com/artigos/">Artigos</a></li><li><a href="https://otaviodantas.com/sobre/">Sobre</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://otaviodantas.com/artigos/primeiro-modelo-de-machine-learning/">Como fazer seu primeiro modelo de Machine Learning</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p style='text-align: justify;'>
+Exemplo simples de como implementar uma base de dados comum, em um modelo de Machine Learning que determinará se ele é um vinho do tipo Branco ou Tinto usando o JupyterLab.
+</p>
+<p><img src="https://miro.medium.com/max/1400/1*SmQEaANmMNiSgj5i7WSi1Q.jpeg" alt="Untitled"></p>
+<p align = "center">
+Fonte: Studio Ingrid Picanyol(BeHance).
+</p>
+<p style='text-align: justify;'>
+Para começar vamos instalar nosso ambiente de programação, o JupyterLab. O Jupyter é uma iniciativa cem por cento open source, que visa o suporte para o estudo e desenvolvimento de ciência de dados com suporte para várias linguagens. Se você usar o pip, poderá instalá-lo com:
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">pip install jupyterlab
+</code></pre></div><p>Além do ambiente de programação, também precisaremos baixar duas ferramentas que vão nos auxiliar na hora de criar os modelos, que são elas:</p>
+<ul>
+<li>
+<p><a href="https://www.anaconda.com/distribution/">Anaconda</a></p>
+</li>
+<li>
+<p><a href="https://scikit-learn.org/stable/install.html">Scikit-Learn</a></p>
+</li>
+</ul>
+<h3 id="base-dedados"><strong>Base de dados</strong></h3>
+<p>Com tudo instalado, vamos baixar a base de dados disponível no Kaggle para poder usar no nosso modelo:
+<a href="https://www.kaggle.com/dell4010/wine-dataset">https://www.kaggle.com/dell4010/wine-dataset</a></p>
+<h3 id="iniciando-ojupyter"><strong>Iniciando o Jupyter</strong></h3>
+<p>Agora basta inicializar o Jupyter na pasta no local onde você quer iniciar o projeto.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Desktop<span style="color:#ae81ff">\o</span>t-vio<span style="color:#ae81ff">\c</span>ode<span style="color:#ae81ff">\P</span>ython<span style="color:#ae81ff">\t</span>est
+</code></pre></div><h3 id="mão-na-massa-ou-novinho"><strong>Mão na massa, ou no vinho!</strong></h3>
+<p>Com o ambiente de programação aberto, vamos começar a programar. Na primeira célula importaremos as bibliotecas e funções necessárias.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+<span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> ExtraTreesClassifier
+</code></pre></div><ul>
+<li><em><strong>train_test_split:</strong> é uma</em> função usada para dividir o conjunto total de dados em dois outros conjuntos o de treino e o teste.</li>
+<li><em><strong>ExtraTreesClassifier:</strong></em> é um método de aprendizado de conjunto baseado em árvore de decisão, a diferença desse método para o RandomForest é a foma de aprendizado sem o excesso, ou seja, ela propõe ao modelo a aleatoriedade de determinadas decisões.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">file <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;wine_dataset.csv&#39;</span>)
+</code></pre></div><ul>
+<li><em><strong>pd.read_csv:</strong></em> Nesta parte simplesmente importamos o dataset que vamos utilizar.</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/1250/1*Wb8p7XMBLBIpBfVH5wWfYQ.png" alt="https://cdn-images-1.medium.com/max/1250/1*Wb8p7XMBLBIpBfVH5wWfYQ.png"></p>
+<p align = "center"> Figura 1 </p>
+<p style='text-align: justify;'>
+Note que na Figura 1 na última coluna da tabela, encontramos os tipos do vinho em “red” e “white”, o nosso modelo não conseguirá prosseguir se não transpassarmos coluna de str para int. Isso faz parte de um processo muito importante para qualquer tipo de modelo, o tratamento de dados está intrinsecamente ligado ao sucesso do seu modelo.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file[<span style="color:#e6db74">&#39;style&#39;</span>] <span style="color:#f92672">=</span> file[<span style="color:#e6db74">&#39;style&#39;</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#ae81ff">0</span>)
+file[<span style="color:#e6db74">&#39;style&#39;</span>] <span style="color:#f92672">=</span> file[<span style="color:#e6db74">&#39;style&#39;</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;white&#39;</span>, <span style="color:#ae81ff">1</span>)
+</code></pre></div><p>As funções acima demonstram como podemos transformar a coluna <em>style.</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">target <span style="color:#f92672">=</span> file[<span style="color:#e6db74">&#39;style&#39;</span>]
+predictive <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#39;style&#39;</span>, axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
+</code></pre></div><p style='text-align: justify;'>
+Nessa parte do código temos a separação das varáveis preditoras e das variáveis resultado. As variáveis alvo, ou resultado, são aquelas que buscamos no experimento, logo, a variável *target* recebe toda a coluna <b> style(Figura 2).</b>
+</p>
+<p align = "center"> 
+ <img src="https://cdn-images-1.medium.com/max/1250/1*j_W_grl-w4JXX4ETEFK6Lg.png">Figura 2 
+</p>
+<p>Já a variável <em>predictive</em> recebe as demais colunas do dataset(Figura 3), esse tipo de variável é composta por dados que podem mudar o resultado das variáveis alvo.</p>
+<p align = "center">
+    <img src="https://cdn-images-1.medium.com/max/1250/1*TGkC6MJDtR0dOfoq50yoKQ.png"> Figura 3 
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">predictive_train, predictive_test, target_train, target_test <span style="color:#f92672">=</span> train_test_split(predictive, target, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>)
+</code></pre></div><p style='text-align: justify;'>
+Existem etapas para percorrer no processo de criação de um modelo de Machine Learning, duas dessas etapas são: etapa de treino e etapa de teste. Na etapa de treino os dados são requisitados para que o modelo possa entender a diferença do vinho tinto para o vinho branco. Já na etapa de teste outro dataset é entregue ao modelo, diferente do dataset que é usado na etapa de treino, para isso usamos o *train_test_split,* ele irá preparar os dados para o treino e teste.
+</p>
+<p style='text-align: justify;'>
+Podemos ver claramente como o conjunto é dividido. A função separou uma porção maior para a etapa de treino (Figura 4, a esquerda), e uma porção equivalente a um terço do total, para a etapa de de teste (Figura 5, a direita).
+</p>
+<p align = "center"> 
+    <img src="https://cdn-images-1.medium.com/max/1250/1*0BPb5sg984GLztWq0OqQjw.png">
+    Figura 4
+</p>
+<p align = "center"> 
+    <img src="https://cdn-images-1.medium.com/max/938/1*MUvqoOiYkKNqOpWPQTPChQ.png"> Figura 5
+</p>
+<h3 id="criando-omodelo"><strong>Criando o modelo</strong></h3>
+<p>Pode parecer engraçado, mas criaremos o modelo em apenas uma linha de código.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> ExtraTreesClassifier(n_estimators <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>)
+</code></pre></div><p>Nessa linha basicamente chamamos o modelo que importamos lá em cima e passamos um parâmetro para ela.</p>
+<ul>
+<li><em>n_estimators:</em> número de árvores usadas para processar o conjunto de dados, por padrão ele é =10.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>fit(predictive_train, target_train)
+</code></pre></div><p>Por meio da função <em>fit do scikit-learn</em> implementamos os estimadores.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1250/1*fr9iuTYkEA5V7g8L6iOXPQ.png" alt="https://cdn-images-1.medium.com/max/1250/1*fr9iuTYkEA5V7g8L6iOXPQ.png"></p>
+<p align = "center"> Figura 6</p>
+<p style='text-align: justify;'>
+Se tudo correr bem até aqui esse será o resultado da depuração da célula anterior (Figura 6), a partir desse ponto o seu modelo está treinado.
+</p>
+<h3 id="hora-doteste"><strong>Hora do teste</strong></h3>
+<p style='text-align: justify;'>
+Lembra quando separamos os dados em conjunto de treino e teste, pois então, está na hora de usar o conjunto de teste para saber se realmente o modelo tem um resultado esperado, ou seja, se ele vai conseguir determinar qual vinho é cada um.
+</p>
+<p style='text-align: justify;'>
+Para isso usaremos a função *score,* ela irá fornecer ao modelo nossos dados de teste, e por consequência a variável *result* receberá o veredito.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>score(predictive_test, target_test)
+</code></pre></div><p style='text-align: justify;'>
+Para que possamos ver o resultado do teste, basta utilizar a célula seguinte para imprimir:
+</p>
+<p align = "center">
+    <img src="https://cdn-images-1.medium.com/max/1250/1*pmgYyuBp6xM4OztBWs9S8Q.png">
+</p>
+<p align = "center"> Figura 7</p>
+<p style='text-align: justify;'>
+Pronto! O seu modelo está finalizado e com uma taxa de assertividade alta, isso quer dizer que se inserido qualquer outro dado diferente do que foi usado no dataset de treino e teste, provavelmente ele terá 99,8% de certeza no resultado.
+</p>
+<hr>
+<p style='text-align: justify;'>
+O artigo contém várias assuntos pertinentes na área de ciência de dados, vou deixar alguns link com conteúdos mais aprofundados sobre os tópicos.
+</p>
+<h1 id="referências"><strong>Referências:</strong></h1>
+<ul>
+<li><a href="https://youtu.be/DNegkxwQJuY">https://youtu.be/DNegkxwQJuY</a></li>
+<li><a href="https://medium.com/@contactsunny/how-to-split-your-dataset-to-train-and-test-datasets-using-scikit-learn-e7cf6eb5e0d">https://medium.com/@contactsunny/how-to-split-your-dataset-to-train-and-test-datasets-using-scikit-learn-e7cf6eb5e0d</a></li>
+<li><a href="https://medium.com/@namanbhandari/extratreesclassifier-8e7fc0502c7">https://medium.com/@namanbhandari/extratreesclassifier-8e7fc0502c7</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/tags/python/">Python</a></span>
+        <span class="tag"><a href="https://otaviodantas.com/tags/machine-learning/">Machine Learning</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/categories/development/">Development</a></span>
+        
+    </p>
+
+  		
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://otaviodantas.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

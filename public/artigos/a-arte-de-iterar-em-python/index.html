@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Otávio Mendonça ">
+<meta name="description"
+    content="A arte de Iterar, em Python" />
+<meta name="keywords"
+    content=", Python" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://otaviodantas.com/artigos/a-arte-de-iterar-em-python/" />
+
+
+<title>
+    
+    A arte de Iterar, em Python. | Otávio Mendonça
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://otaviodantas.com/main.c56d17f0a8151dc3fb01bf191ffb8edb734f3eb84f8c69d198a1a3a585ad89f9.css">
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://otaviodantas.com/%20apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://otaviodantas.com/%20favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://otaviodantas.com/%20favicon-16x16.png">
+<link rel="manifest" href="https://otaviodantas.com/%20site.webmanifest">
+<link rel="mask-icon" href="https://otaviodantas.com/%20safari-pinned-tab.svg" color="#1b1c1d">
+<link rel="shortcut icon" href="https://otaviodantas.com/%20favicon.ico">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<meta name="theme-color" content="#1b1c1d">
+
+
+<meta itemprop="name" content="A arte de Iterar, em Python.">
+<meta itemprop="description" content="A arte de Iterar, em Python">
+<meta itemprop="datePublished" content="2020-11-15T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-11-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="949">
+<meta itemprop="image" content="https://otaviodantas.com/"/>
+
+
+
+<meta itemprop="keywords" content="Python," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://otaviodantas.com/"/>
+
+<meta name="twitter:title" content="A arte de Iterar, em Python."/>
+<meta name="twitter:description" content="A arte de Iterar, em Python"/>
+
+
+
+
+
+
+<meta property="article:section" content="Development" />
+
+
+
+<meta property="article:published_time" content="2020-11-15 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-20V0R8NYR0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://otaviodantas.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">~</span>
+            <span class="logo__text">cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#FFD539;
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://otaviodantas.com/artigos/">Artigos</a></li><li><a href="https://otaviodantas.com/sobre/">Sobre</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://otaviodantas.com/artigos/a-arte-de-iterar-em-python/">A arte de Iterar, em Python.</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><img src="https://miro.medium.com/max/1094/1*C-L6TRWn2iRL5Z3C7KOz0g.png" alt="https://miro.medium.com/max/1094/1*C-L6TRWn2iRL5Z3C7KOz0g.png"></p>
+<p align = "center">
+    Illustration by Natasha Remarchuk from <a href="https://icons8.com/illustrations">icons8 </a>
+</p>
+<p style='text-align: justify;'>
+Quanto mais mergulhamos em alguma linguagem, começamos a busca por entender o por que que as coisas funcionam dessa ou daquela forma. Hoje trouxe um conceito que se ouve falar bem no inicio da programação, mas que passa despercebido até nos depararmos com o nome dele associado a um erro.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">TypeError: list object is not an iterator
+</code></pre></div><h2 id="conceito"><strong>Conceito</strong></h2>
+<p style='text-align: justify;'>
+Formalmente falando, iteradores são atributos de classe que o tornam “percorriveis”, ou seja, é possível acessar cada parte da coleção de forma singular. De um forma prática, quando implementamos uma lista em Python ele já é por natureza iterável.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">number_list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]
+<span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> number_list:
+     <span style="color:#66d9ef">print</span>(number)
+</code></pre></div><p>A saída para esse script é:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">4</span>
+<span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">6</span>
+<span style="color:#f92672">[</span>Finished in 0.52s<span style="color:#f92672">]</span>
+</code></pre></div><p style='text-align: justify;'>
+O Python sabe que o <b>number_list</b> é uma lista, por default ele pode ser acessado parte por parte no laço FOR.
+<p style='text-align: justify;'>
+Esse comportamento da lista se da pelo atributo que está implementado por baixo dos panos: <b>iter</b>( ) ou chamado de <b>dunder iter.</b>
+<blockquote>
+<p>Nota: O conceito de dunder advém da ideia de double underscore, que nada mais é do que os dois “underlines” posicionados antes e depois do nome do atributo. Isso é muito comum no mundo python para relacionar sobre qual atributos queremos falar, como por exemplo: <strong>str</strong>( ) ← dunder str, <strong>index</strong>() ← dunder index, <strong>float</strong>( ) ← dunder float, e por ai vai.</p>
+</blockquote>
+<h2 id="o-for-em-outra-linguagem"><strong>O FOR em outra linguagem</strong></h2>
+<p style='text-align: justify;'>
+Nas linguagem mais recentes, o FOR melhorado é usado à algum tempo, entretanto nas linguagens como o C por exemplo, o FOR é implementado com um contador, amigavelmente quase sempre chamado de “i”, e que é responsável por manter o estado de operação daquele laço, como visto no exemplo a baixo:
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, i <span style="color:#f92672">==</span> range, i<span style="color:#f92672">++</span>){
+  printf(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, i);
+}
+</code></pre></div><p style='text-align: justify;'>
+A variável “i” está implícita em Python, ou seja, não precisamos esquentar a cabeça quando vamos iterar sobre alguma coleção, pois internamente, o Python já fornece isso pra gente prontinho. Porém, internamente, podemos comparar a variável “i” com a função next( ) ou dunder next (__next__) que é responsável por fazer o gerenciamento de estado em um loop.
+</p>
+<p style='text-align: justify;'>
+Vamos tentar implementar como seria então um laço FOR usando as funções que são usadas internamente durante uma chamada:
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lista <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>]
+iter_list <span style="color:#f92672">=</span> iter(lista)
+<span style="color:#66d9ef">print</span>(next(iter_list))
+<span style="color:#66d9ef">print</span>(next(iter_list))
+<span style="color:#66d9ef">print</span>(next(iter_list))
+<span style="color:#66d9ef">print</span>(next(iter_list))
+<span style="color:#66d9ef">print</span>(next(iter_list))
+</code></pre></div><p style='text-align: justify;'>
+Repare como eu percorro a lista de cinco números usando a função next( ), que pega como parâmetro um objeto iterador. E a saída disse código é este:
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">4</span>
+<span style="color:#ae81ff">5</span>
+<span style="color:#f92672">[</span>Finished in 0.383s<span style="color:#f92672">]</span>
+</code></pre></div><p style='text-align: justify;'>
+Tem a mesma saída que obtivemos usando o laço for no tópico anterior. É feito um adendo ao fato de quando não houver mais iterador para iterar, a função next( ) irá gerar uma exceção chamada StopIteration, e é com ele que o loop identifica que a coleção chegou ao final.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">iter_list <span style="color:#f92672">=</span> iter(lista)
+<span style="color:#66d9ef">try</span>:
+     <span style="color:#66d9ef">print</span>(next(iter_list))
+     <span style="color:#66d9ef">print</span>(next(iter_list))
+     <span style="color:#66d9ef">print</span>(next(iter_list))
+     <span style="color:#66d9ef">print</span>(next(iter_list))
+     <span style="color:#66d9ef">print</span>(next(iter_list))
+     <span style="color:#66d9ef">print</span>(next(iter_list))
+<span style="color:#66d9ef">except</span>: <span style="color:#75715e">#StopIteration</span>
+     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;lista chegou ao fim&#34;</span>)
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">4</span>
+<span style="color:#ae81ff">5</span>
+lista chegou ao fim
+<span style="color:#f92672">[</span>Finished in 0.367s<span style="color:#f92672">]</span>
+</code></pre></div><h2 id="1-2-3-testando"><strong>1, 2, 3 testando.</strong></h2>
+<p style='text-align: justify;'>
+A implementação de algo é que nos faz entender de fato o que está sendo falado, por conta disto então, vamos criar uma classe, e fazer alguns testes em torno dela.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">iter_list_number</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, max: int) <span style="color:#f92672">-&gt;</span> None:
+        self<span style="color:#f92672">.</span>end_number <span style="color:#f92672">=</span> max
+        self<span style="color:#f92672">.</span>start_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    n_list <span style="color:#f92672">=</span> iter_list_number(<span style="color:#ae81ff">10</span>)
+    <span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> n_list:
+        <span style="color:#66d9ef">print</span>(number)
+</code></pre></div><p style='text-align: justify;'>
+Criamos uma classe bem simples, a intenção é apenas receber um número e quando quisermos iteralo, faremos isso a partir do número 5, exemplo: iter_list_number(10) → a saída esperada é 5, 6, 7, 8, 9, 10. Porém o log de erro que recebemos foi esse:
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">File <span style="color:#e6db74">&#34;.\test.py&#34;</span>, line 8, in &lt;module&gt;
+    <span style="color:#66d9ef">for</span> number in n_list:
+TypeError: <span style="color:#e6db74">&#39;iter_list_name&#39;</span> object is not iterable
+</code></pre></div><p style='text-align: justify;'>
+Como dito anteriormente, quando não implementamos o dunder iter é impossível iterar sobre o objeto da classe. Sabendo disso, vamos implementar este método para ver se realmente funciona.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">iter_list_number</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, max: int) <span style="color:#f92672">-&gt;</span> None:
+        self<span style="color:#f92672">.</span>end_number <span style="color:#f92672">=</span> max
+        self<span style="color:#f92672">.</span>start_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>    
+        
+    <span style="color:#66d9ef">def</span> __iter__(self):
+        <span style="color:#66d9ef">return</span> self    
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__next__</span>(self) <span style="color:#f92672">-&gt;</span> int:
+        x <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>start_number
+        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> self<span style="color:#f92672">.</span>end_number:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopIteration</span>
+        <span style="color:#66d9ef">else</span>:
+            self<span style="color:#f92672">.</span>start_number <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        
+        <span style="color:#66d9ef">return</span> x
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:    
+    foo <span style="color:#f92672">=</span> iter_list_number(<span style="color:#ae81ff">10</span>)
+    <span style="color:#66d9ef">for</span> bar <span style="color:#f92672">in</span> foo:
+        <span style="color:#66d9ef">print</span>(bar)
+</code></pre></div><p>Logo, a saída será:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">6</span>
+<span style="color:#ae81ff">7</span>
+<span style="color:#ae81ff">8</span>
+<span style="color:#ae81ff">9</span>
+<span style="color:#ae81ff">10</span>
+<span style="color:#f92672">[</span>Finished in 0.358s<span style="color:#f92672">]</span>
+</code></pre></div><p style='text-align: justify;'>
+É importante frisar que é importante ter uma condição de parada, assim como na linguagem C, usamos o número de entrada dado pelo usuário para ser a condição de parada (self.end_number) e vamos incrementando sobre o número pré-definido self.start_number.
+</p>
+<p style='text-align: justify;'>
+É possível fazer outra implementação que possuí outras características, desta vez usando uma classe que recebe umas lista de cores em seu construtor e com o método <b>add_item</b> podemos adicionar outras cores à lista.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">colors_colletion</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, colors: List[str]) <span style="color:#f92672">-&gt;</span> None:
+        self<span style="color:#f92672">.</span>list_colors <span style="color:#f92672">=</span> colors
+        self<span style="color:#f92672">.</span>flag_count: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>    
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_item</span>(self, colors: str) <span style="color:#f92672">-&gt;</span> None:
+        self<span style="color:#f92672">.</span>list_colors<span style="color:#f92672">.</span>append(colors)    
+    
+    <span style="color:#66d9ef">def</span> __iter__(self):
+        <span style="color:#66d9ef">return</span> self    
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__next__</span>(self) <span style="color:#f92672">-&gt;</span> str:
+        flag_stop <span style="color:#f92672">=</span> len(self<span style="color:#f92672">.</span>list_colors) <span style="color:#75715e">#stop condition</span>
+        flag_count <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>flag_count       
+        <span style="color:#66d9ef">if</span> flag_count <span style="color:#f92672">&gt;=</span> flag_stop:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopIteration</span>        
+        <span style="color:#66d9ef">else</span>:
+            self<span style="color:#f92672">.</span>flag_count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>list_colors[flag_count]
+        
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    list_colors <span style="color:#f92672">=</span> colors_colletion([<span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#e6db74">&#39;brown&#39;</span>])
+    list_colors<span style="color:#f92672">.</span>add_item(<span style="color:#e6db74">&#39;green&#39;</span>)
+    <span style="color:#66d9ef">for</span> color <span style="color:#f92672">in</span> list_colors:
+        <span style="color:#66d9ef">print</span>(color)
+</code></pre></div><p style='text-align: justify;'>
+A função dunder next é semelhante ao exemplo anterior, porém, agora usamos o tamanho da lista como condição de parada, assim que a <b>flag_count</b> chegar ao tamanho máximo ele apresentará o StopIteration e o loop acabará.
+<h2 id="conclusão"><strong>Conclusão</strong></h2>
+<p style='text-align: justify;'>
+Os iteradores em Python, apresentam uma construção elegante, com a sua aplicabilidade variada. Vale ressaltar que os iteradores possuem grande base no padrão de projeto Iterator, o que pode se tornar tópico de um outro artigo.
+</b>
+<h2 id="referências"><strong>Referências</strong></h2>
+<p>Esses dois links me ajudaram a entender alguns pontos:</p>
+<p><a href="https://refactoring.guru/pt-br/design-patterns/iterator">refactoring.guru</a></p>
+<p><a href="https://www.geeksforgeeks.org/python-__iter__-__next__-converting-object-iterator/">www.geeksforgeeks.org</a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/tags/python/">Python</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/categories/development/">Development</a></span>
+        
+    </p>
+
+  		
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://otaviodantas.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

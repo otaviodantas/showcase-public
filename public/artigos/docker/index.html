@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Otávio Mendonça ">
+<meta name="description"
+    content="O básico do Docker" />
+<meta name="keywords"
+    content=", Python, Docker" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://otaviodantas.com/artigos/docker/" />
+
+
+<title>
+    
+    O básico do Docker | Otávio Mendonça
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://otaviodantas.com/main.c56d17f0a8151dc3fb01bf191ffb8edb734f3eb84f8c69d198a1a3a585ad89f9.css">
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://otaviodantas.com/%20apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://otaviodantas.com/%20favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://otaviodantas.com/%20favicon-16x16.png">
+<link rel="manifest" href="https://otaviodantas.com/%20site.webmanifest">
+<link rel="mask-icon" href="https://otaviodantas.com/%20safari-pinned-tab.svg" color="#1b1c1d">
+<link rel="shortcut icon" href="https://otaviodantas.com/%20favicon.ico">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<meta name="theme-color" content="#1b1c1d">
+
+
+<meta itemprop="name" content="O básico do Docker">
+<meta itemprop="description" content="O básico do Docker">
+<meta itemprop="datePublished" content="2020-08-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-08-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2008">
+<meta itemprop="image" content="https://otaviodantas.com/"/>
+
+
+
+<meta itemprop="keywords" content="Python,Docker," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://otaviodantas.com/"/>
+
+<meta name="twitter:title" content="O básico do Docker"/>
+<meta name="twitter:description" content="O básico do Docker"/>
+
+
+
+
+
+
+<meta property="article:section" content="Development" />
+
+
+
+<meta property="article:published_time" content="2020-08-14 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-20V0R8NYR0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://otaviodantas.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">~</span>
+            <span class="logo__text">cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#FFD539;
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://otaviodantas.com/artigos/">Artigos</a></li><li><a href="https://otaviodantas.com/sobre/">Sobre</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://otaviodantas.com/artigos/docker/">O básico do Docker</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="contextualizando"><strong>Contextualizando</strong></h2>
+<p style='text-align: justify;'>
+Durante a minha graduação eu sempre ouvi, e continuo ouvindo, sobre o Docker, e como ele é isso e aquilo. Esse assunto sempre me deixou com uma pulga atrás da orelha, então desta vez eu decidi estudar um pouco mais sobre como surgiu a tecnologia e como ela impactou todo o ecossistema de desenvolvimento.
+</p>
+<h2 id="a-história-do-docker"><strong>A história do Docker.</strong></h2>
+<p style='text-align: justify;'>
+Para contar a história do Docker antes é preciso entender como as coisas funcionavam antes dele. De uma forma superficial as empresas que proviam os servidores e disponibilizavam máquinas e serviços para as estabilidade das aplicações de outras empresas faziam tudo isso, na grande maioria, com máquinas físicas. As máquinas eram providas com capacidade estática, ou seja, as empresas compravam aquelas máquinas pensando sempre acima da média diária de movimento, para que, em alguma ocasião especial, o sistema não sofresse por uma sobrecarga de acessos.
+</p>
+<p style='text-align: justify;'>
+Por exemplo, uma máquina que comportava o banco de dados da aplicação, era provida com uma capacidade de suportar 10 vezes o fluxo diário de query, pensando que, em dia muito movimentado, o banco suportaria os acessos “sem abrir o bico”. Mas para pra pensar na capacidade diária que o sistema “desperdiçava” somente em uma das máquinas.
+</p>
+<p style='text-align: justify;'>
+Isso afetava diretamente o bolso da empresa que comprava as máquinas, pois, quanto maior a sua capacidade, maior os gastos com energia e manutenção, lembrando que as máquinas ficavam em seu maior tempo ociosas.
+</p>
+<p align = "center">
+        <img src="https://miro.medium.com/max/1063/1*kLHQkOWV4WJj1JFXUn4KBg.jpeg">Fonte: Autor
+</p>
+<p style='text-align: justify;'>
+Porém com o desenvolvimento do Hypervisor e todas as inovações que ele trazia junto de si, os hosts começaram a implementar as máquinas virtuais como forma de lidar com a capacidade ociosa das máquinas físicas.
+</p>
+<p align = "center">
+        <img src="https://miro.medium.com/max/458/1*GLNUNfrh6JmF0RSLfLLy9A.jpeg">
+</p>
+<p style='text-align: justify;'>
+O Hypervisor compartilha virtualmente os recursos da máquina física, podendo então, distribuir o hardware “parrudo” que anteriormente era usado somente em uma máquina física, para N máquinas virtuais, causando um impacto gigantesco no ramo de servidores pelo mundo todo.
+</p>
+<p style='text-align: justify;'>
+Mas como nem tudo são flores, depois de um tempo os servidores começaram a sentir o peso de ter um sistema operacional rodando em cada máquina virtual.
+</p>
+<p style='text-align: justify;'>
+Como qualquer sistema operacional eles ocupam uma parcela mínima de memória RAM e espaço no disco, além de pacotes que não são uteis para a aplicação a qual a máquina está destinada.
+</p>
+<p style='text-align: justify;'>
+No final das contas ambas as tecnologias tinham o mesmo problema, possuíam capacidade e ferramentas além do que era necessário para a aplicação. <b>E é ai que o Docker entra!</b>
+</p>
+<p style='text-align: justify;'>
+O conceito de Docker abrange muito mais que só o deploy , é um ecossitema de ferramentas que possibilitam ao desenvolvedor uma rápidez na hora de implementar a infraestrutura da sua aplicação.
+</p>
+<p align = "center">
+        <img src="https://miro.medium.com/max/458/1*FmE1KNXeE07pxaGvA2hVEQ.jpeg">Fonte: autor
+</p>
+<p style='text-align: justify;'>
+O Docker é nativo no Linux, tornando sua operação mais fluída, pois não precisa de uma virtualização como no Windows. Para rodar, o Docker no Windows uma micromáquina virtual que é executada em cima do Hyper-V, mesma tecnologia do Hypervisor, que pode ser encontrado em alguns modelos do Windows, um exemplo de micromáquina é a Alpine Linux. Outra forma de executar o Docker no Windows é o usando o subsistema [WSL2](https://docs.microsoft.com/pt-br/windows/wsl/wsl2-index), que precisa ser instalado.
+</p>
+<p style='text-align: justify;'>
+A Docker Engine é capaz de criar, entregar e rodar containers com uma rapidez monstruosa, isso faz dele uma proposta muito melhor que os seus antecessores.
+</p>
+<p style='text-align: justify;'>
+No final das contas, o que o Docker propõe é que uma aplicação possa ser provida de forma segura e isolada, ou seja, cada parte da aplicação possui um container para tal. Cada container por sua vez possui somente o necessário para que aquela aplicação seja operada, e se por algum acaso a demanda por bibliotecas ou ferramentas dentro do container for solicitada, você não terá problema em implementar.
+</p>
+<h2 id="por-onde-começar"><strong>Por onde começar?</strong></h2>
+<p style='text-align: justify;'>
+Como eu disse anteriormente, o Hyper-V só é encontrado em alguns modelos de Windows como o Professional, Education e Enterprise, então se você não for usuário de algum desses você não poderá brincar com a nossa baleiazinha, brincadeira, tem outra possibilidade de usar o Docker mesmo não sendo usuário desses modelos, e se chama Docker Toolbox. O Docker Toolbox vem com o Oracle Virtual Box, que tem a função de emular o Alphine Linux.
+</p>
+<p><a href="https://docs.docker.com/toolbox/">Docker Toolbox</a></p>
+<p><a href="https://docs.docker.com/desktop/windows/">Docker Install</a></p>
+<p style='text-align: justify;'>
+Na hora de executar, o Docker for Windows pode ser utilizado via prompt nativo do windows, porém o Docker Toolbox possui um prompt especial para o uso, o Docker Quickstart Terminal.
+</p>
+<h2 id="preliminares"><strong>Preliminares</strong></h2>
+<p style='text-align: justify;'>
+Antes de começar a organizar tudo em contêineres, precisamos falar de algo que iremos ouvir muito enquanto usuários do Docker, as <b>IMAGENS</b>.
+</p>
+<p style='text-align: justify;'>
+Nos nossos exemplos passados falamos sobre a aplicação que fica “dentro” do contêiner, passaremos a chamar essa estrutura de imagens, pois são elas que dão vida ao nosso amigo frio e metálico. Sendo mais especifico, quando precisamos subir um container contendo o Mysql, por exemplo, precisaremos ir até o repositório principal de imagens do docker, o docker hub, e buscar pela imagem oficial do banco de dados.
+</p>
+<p align = "center">
+        <img src="https://miro.medium.com/max/1094/1*tgUYNHm1I5jodmX76DKfyg.png">Fonte: autor
+</p>
+<blockquote>
+<p>Você pode encontrar outras imagens que possuem o nome mysql, como por exemplo zert/mysql, marifz/mysql-oficial, porém essas imagens NÃO são oficiais, fica nítido que a imagem oficial contem a certificação docker logo em baixo.</p>
+</blockquote>
+<p style='text-align: justify;'>
+As imagens oficiais são a estruturas padrões que podemos utilizar para criar as nossas próprias imagens, com comandos e rotinas personalizadas, e é o que vamos fazer nesse artigo.
+</b>
+<h2 id="o-projeto"><strong>O projeto</strong></h2>
+<p style='text-align: justify;'>
+A principio pensei de subir somente um container para uma demonstração mais casual, porém, estou com um outro projeto que envolve a API do twitter e NLP.
+</b>
+<p style='text-align: justify;'>
+Pensando nisso, vou subir um container com a aplicação bruta, o código, e outra com o banco. O intuito geral é captar tweets relacionados a determinado assunto em um banco de dados relacional.
+</b>
+<p align = "center">
+        <img src="https://miro.medium.com/max/458/1*82AtGK6qdg3uNJrYQkR-Bw.jpeg">Fonte: autor
+</p>
+<h2 id="repositório"><strong>Repositório</strong></h2>
+<blockquote>
+<p>Estou usando o Docker Toolbox, então todas os comandos serão no Docker Quickstart Terminal.</p>
+</blockquote>
+<p>Com o terminal aberto, vamos até a pasta que contêm a nossa aplicação. No meu caso a distribuição ficou dessa forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">C:.
+│
+├───code
+│       auth.py
+│       database.py
+│       main.py
+│       organize.py
+│       remove_trash.py
+│       stream.py
+│
+├───db
+│       create-database.sql
+│
+└───dockerfiles
+        db.Dockerfile
+        twitter-api.Dockerfile
+</code></pre></div><p>A pasta <strong>code</strong> contêm os módulos python, na pasta <strong>db</strong> o arquivo .sql para a criação do banco, e os arquivos para as criações das nossas imagens estão na pasta <strong>dockerfiles</strong>. Os aquivos com a extensão .Dockerfile é responsável por conter as instruções para a criação da nossa imagem.</p>
+<h2 id="1º-etapa-criar-a-imagem-mysql"><strong>1º Etapa: Criar a imagem Mysql.</strong></h2>
+<p>Os comandos no Docker são muito simples e intuitivos, para começar então vamos verificar a versão que estamos trabalhando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ docker --version
+Docker version 18.03.0-ce
+</code></pre></div><p>Para criar a nossa imagem vamos precisar do arquivo db.Dockerfile, mencionado na parte anterior.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">FROM mysql:5.7COPY ./db/create-database.sql /docker-entrypoint-initdb.d/ENV MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>RootPasswordENV MYSQL_DATABASE<span style="color:#f92672">=</span>twitterdbENV MYSQL_USER<span style="color:#f92672">=</span>MainUserENV MYSQL_PASSWORD<span style="color:#f92672">=</span>MainPassword
+</code></pre></div><ul>
+<li>O <strong>FROM</strong> representa a nossa imagem base, ou seja, vamos utilizar a imagem original myql, o dois pontos denota a versão, que no meu caso é a 5.7.</li>
+<li><strong>COPY</strong> literalmente copia o aquivo que é mencionado no primeiro parâmetro que está localizado no host, para o segundo parâmetro, dentro do contêiner. COPY <origem> <destino></li>
+<li><strong>ENV</strong> são variáveis de ambiente, são coisas que precisam ser passadas para o funcionamento do meu contêiner mysql.</li>
+</ul>
+<p>vamos até o prompt dar o comando para criar a imagem.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker build -t otaviodantas/mysql -f ./dockerfiles/db.Dockerfile .
+</code></pre></div><ul>
+<li><strong>build</strong> é o comando para criar a imagem no docker.</li>
+<li><strong>t</strong> flag usada para nomear a imagem, como boa prática o ideal é que coloque o usuário que mantem essa imagem/ a imagem oficial.</li>
+<li><strong>f</strong> flag com o caminho até o dockerfile</li>
+</ul>
+<p align = "center">
+        <img src="https://miro.medium.com/max/1094/1*2rYQYg76sfjoe2r5dLUdPQ.png">Fonte: autor
+</p>
+<p style='text-align: justify;'>
+Repare que ele segue cada etapa assim como está no arquivo, ele primeiro faz o download da imagem base e em seguida ele vai executar as outras instruções que vem a seguir, em camadas.
+</p>
+<p align = "center">
+        <img src="https://miro.medium.com/max/1000/1*bF-kV6oAFrI9vSGP6MDBGQ.png">Fonte: autor
+</p>
+<p style='text-align: justify;'>
+As camadas são a estrutura da imagem, quando precisarmos modificar a mesma não custará o mesmo tempo que custou da primeira vez, tornando esse processo muito rápido. Dando um docker images, vamos conseguir visualizar todas as imagens salvas localmente.
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker images
+</code></pre></div><p><img src="https://miro.medium.com/max/1094/1*FZ7DjfMHtqlOEthMS9BfvA.png" alt="https://miro.medium.com/max/1094/1*FZ7DjfMHtqlOEthMS9BfvA.png"></p>
+<h2 id="2º-etapa-subir-o-contêiner"><strong>2º Etapa: Subir o contêiner.</strong></h2>
+<p>Com a nossa imagem pronta, basta subirmos o contêiner com o comando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker run otaviodantas/mysql
+</code></pre></div><p>O processo de inicialização está sendo feito e aparecerá em forma de log no terminal. Se você preferir não vê-los, o comando precisará da flag <strong>-d</strong> e ficará dessa forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker run -d otaviodantas/mysql
+</code></pre></div><p>Para verificar se o contêiner está ativo basta dar um <strong>docker ps</strong>.</p>
+<p><img src="https://miro.medium.com/max/1094/1*cGbxmmz_-BpWtMqQoSpxvA.png" alt="https://miro.medium.com/max/1094/1*cGbxmmz_-BpWtMqQoSpxvA.png"></p>
+<h2 id="3º-etapa-criar-a-imagem-python"><strong>3º Etapa: Criar a imagem Python.</strong></h2>
+<p style='text-align: justify;'>
+Assim como criamos a nossa imagem Mysql, nesta etapa vamos construir a imagem que terá o papel de coletar os twittes e trata-los para salvar no banco que já está rodando.
+</p>
+Vamos dar uma olhada no DockerFile dessa imagem:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.6.4LABEL maintainer=&#34;Otávio Mendonça&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> code/. /scr/COPY requirements.txt /scr/RUN pip install -r /scr/requirements.txtWORKDIR /scr<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ul>
+<li>O <strong>FROM</strong> determina qual imagem base estamos usando para construir a nossa imagem pessoal, nessa caso usamos o python na versão 3.6.4. Essa versão estava rodando no meu VScode durante toda a fase de construção da aplicação na minha máquina.</li>
+<li><strong>LABEL</strong> pode ser utilizado como rótulos, definindo informações para o sistema. Nesse caso usei a variável <em>mantainer</em> para gravar o meu nome como “mantedor” dessa imagem.</li>
+<li><strong>COPY</strong> cria uma cópia de arquivo da máquina host para dentro do contêiner. Ele está passando todos os códigos da aplicação para a a pasta scr/.</li>
+<li><strong>RUN</strong> vai executar o comando que estiver designado. No nosso caso, ele vai, por meio do gerenciador de pacotes pip, instalar todas as bibliotecas e dependências que estão especificadas no arquivo requirements.txt</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">tweepy<span style="color:#f92672">==</span>3.8nltk<span style="color:#f92672">==</span>3.5unidecode<span style="color:#f92672">==</span>1.1.1mysql-connector-python<span style="color:#f92672">==</span>8.0.21
+</code></pre></div><ul>
+<li><strong>WORKDIR</strong> seta um diretório para servir como local de trabalho, ou seja, todos os comandos serão rodados nesse diretório especifico.</li>
+</ul>
+<h2 id="4º-etapa-subindo-contêiner-python"><strong>4º Etapa: Subindo contêiner Python.</strong></h2>
+<p>Para colocar a nossa aplicação rodando, vamos dar o comando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker create otaviodantas/init
+</code></pre></div><p>Subimos o contêiner mysql apenas com o comando</p>
+<p><em><strong>run</strong></em></p>
+<p>, porém, tive problemas na hora de subir o ambiente em Python com o mesmo comando. Para isso primeiro criei a aplicação com o comando</p>
+<p><em><strong>create</strong></em></p>
+<p>e depois o levantei com o comando</p>
+<p><em><strong>start</strong></em></p>
+<p>Agora se dermos um <em><strong>docker ps -a</strong></em> veremos que o nosso contêiner está vivo porém não está ativo</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ docker ps -a
+CONTAINER ID   IMAGE               STATUS
+1f85f1c17610   otaviodantas/init   Created
+</code></pre></div><p>O comando responsável por iniciar é o <em><strong>start</strong>.</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker start &lt;CONTAINER ID&gt;
+</code></pre></div><h2 id="5º-etapa-executando-o-script-dentro-do-contêiner"><strong>5º Etapa: Executando o script dentro do contêiner.</strong></h2>
+<p style='text-align: justify;'>
+Como não consegui executar o comando logo na sua criação, vou precisar entrar no contêiner para rodar o script pelo terminal. Para isso vou usar o comando:
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">docker exec -it &lt;CONTAINER ID&gt; bash
+</code></pre></div><ul>
+<li><strong>exec</strong> serve para executar qualquer coisa que venha depois dele.</li>
+<li><strong>it</strong> determina que a execução seja interativa.</li>
+<li><strong>bash</strong> é o interpretador de comandos.</li>
+</ul>
+<p>Teremos algo como isso:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">root@1f85f1c17610:/scr#
+</code></pre></div><p style='text-align: justify;'>
+A partir daqui todos os comandos que dermos serão executados diretamente no dentro do contêiner.
+Para que eu execute o script principal, nomeado como main.py, basta:
+</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">python main.py
+</code></pre></div><p>O programa irá rodar normalmente e teremos a saída no próprio terminal dessa forma:</p>
+<p><img src="https://miro.medium.com/max/905/1*EqD9cFmG5_BGcq3nDnXdXw.png" alt="https://miro.medium.com/max/905/1*EqD9cFmG5_BGcq3nDnXdXw.png"></p>
+<h2 id="6º-etapa-verificando-no-banco-de-dados"><strong>6º Etapa: Verificando no Banco de dados.</strong></h2>
+<p>Vou usar os mesmo princípios usados na seção acima para entrar no contêiner do banco.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">$ docker exec -it &lt;CONTAINER ID&gt; bash
+root@&lt;CONTAINER ID&gt;:/## mysql -u root -p
+Enter password:
+</code></pre></div><p style='text-align: justify;'>
+A senha do banco foi especificada dentro do arquivo DockerFile, <b>RootPassword.</b>
+Dentro da estrutura SQL, vou até a tabela onde estão salvos os meu dados e seleciono toda a tabela, o resultado:
+<p><img src="https://miro.medium.com/max/1094/1*z_beiy2LYSmmqmgxOlQBrA.png" alt="https://miro.medium.com/max/1094/1*z_beiy2LYSmmqmgxOlQBrA.png"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash"><span style="color:#ae81ff">7866</span> rows in set <span style="color:#f92672">(</span>0.01 sec<span style="color:#f92672">)</span>
+</code></pre></div><h2 id="dificuldades-encontradas"><strong>Dificuldades encontradas.</strong></h2>
+<p><img src="https://miro.medium.com/max/1094/0*4Us_zfWpzheiSJfL.jpg" alt="https://miro.medium.com/max/1094/0*4Us_zfWpzheiSJfL.jpg"></p>
+<p style='text-align: justify;'>
+O projeto principal contava com o docker compose, porém, quando o contêiner do banco era iniciado, ele travava os logs e impedia que o restante do processo continuasse. Passei muito tempo parado nesse bug e por fim optei por criar as imagens na mão e roda’-las da mesma forma. Se alguém já passou por um problema semelhante, por favor entrar em contato kkk.
+</p>
+<p style='text-align: justify;'>
+Outro problema foi o comando run, com a imagem Python, o processo simplesmente não prosseguia, ficava perpetuamente parado abaixo da linha de comando.
+</p>
+<h2 id="ideias-futuras"><strong>Ideias futuras</strong></h2>
+<ul>
+<li>Usar o Docker Compose para inciar os dois contêineres simultaneamente.</li>
+<li>Hospedar a aplicação em uma máquina de Free Tier na AWS(EC2).</li>
+</ul>
+<h2 id="conclusão"><strong>Conclusão</strong></h2>
+<p style='text-align: justify;'>
+Durante todo o processo de construção do ambiente, o Docker se mostrou uma ferramenta extremamente prática e com uma linha de aprendizado exponencial, você consegue colocar a sua aplicação caseira sem muitas complicações no ar.
+</p>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/tags/python/">Python</a></span>
+        <span class="tag"><a href="https://otaviodantas.com/tags/docker/">Docker</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/categories/development/">Development</a></span>
+        
+    </p>
+
+  		
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://otaviodantas.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

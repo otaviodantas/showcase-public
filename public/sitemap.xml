@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <url>
-    <loc>https://otaviodantas.com/posts/2020/03/como-fazer-seu-primeiro-modelo-de-machine-learning/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url>
+  <sitemap>
+    <loc>https://otaviodantas.com/en/sitemap.xml</loc>
+    
+  </sitemap>
   
-  <url>
-    <loc>https://otaviodantas.com/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url>
+  <sitemap>
+    <loc>https://otaviodantas.com/pt/sitemap.xml</loc>
+    
+      <lastmod>2020-11-15T00:00:00+00:00</lastmod>
+    
+  </sitemap>
   
-  <url>
-    <loc>https://otaviodantas.com/posts/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://otaviodantas.com/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://otaviodantas.com/category/</loc>
-  </url>
-  
-  <url>
-    <loc>https://otaviodantas.com/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://otaviodantas.com/tags/</loc>
-  </url>
-  
-</urlset>
+</sitemapindex>

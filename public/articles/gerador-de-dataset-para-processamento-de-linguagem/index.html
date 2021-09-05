@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Otávio Mendonça ">
+<meta name="description"
+    content="Gerador de Dataset para Processamento de Linguagem Natural (PLN)" />
+<meta name="keywords"
+    content=", Python, Machine Learning, NLP" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://otaviodantas.com/articles/gerador-de-dataset-para-processamento-de-linguagem/" />
+
+
+<title>
+    
+    Gerador de Dataset para Processamento de Linguagem Natural (PLN) | Otávio Mendonça  — Otávio Dantas
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://otaviodantas.com/main.c56d17f0a8151dc3fb01bf191ffb8edb734f3eb84f8c69d198a1a3a585ad89f9.css">
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://otaviodantas.com/%20apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://otaviodantas.com/%20favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://otaviodantas.com/%20favicon-16x16.png">
+<link rel="manifest" href="https://otaviodantas.com/%20site.webmanifest">
+<link rel="mask-icon" href="https://otaviodantas.com/%20safari-pinned-tab.svg" color="#1b1c1d">
+<link rel="shortcut icon" href="https://otaviodantas.com/%20favicon.ico">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<meta name="theme-color" content="#1b1c1d">
+
+
+<meta itemprop="name" content="Gerador de Dataset para Processamento de Linguagem Natural (PLN)">
+<meta itemprop="description" content="Gerador de Dataset para Processamento de Linguagem Natural (PLN)">
+<meta itemprop="datePublished" content="2020-10-15T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-10-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="594">
+<meta itemprop="image" content="https://otaviodantas.com/"/>
+
+
+
+<meta itemprop="keywords" content="Python,Machine Learning,NLP," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://otaviodantas.com/"/>
+
+<meta name="twitter:title" content="Gerador de Dataset para Processamento de Linguagem Natural (PLN)"/>
+<meta name="twitter:description" content="Gerador de Dataset para Processamento de Linguagem Natural (PLN)"/>
+
+
+
+
+
+
+<meta property="article:section" content="Development" />
+
+
+
+<meta property="article:published_time" content="2020-10-15 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-20V0R8NYR0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://otaviodantas.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">~</span>
+            <span class="logo__text">cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#FFD539;
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://otaviodantas.com/articles/">Artigos</a></li><li><a href="https://otaviodantas.com/about/">Sobre</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://otaviodantas.com/articles/gerador-de-dataset-para-processamento-de-linguagem/">Gerador de Dataset para Processamento de Linguagem Natural (PLN)</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><img src="https://miro.medium.com/max/1094/1*UMwqWHEYVmkezmRaqyCh1g.png" alt="https://miro.medium.com/max/1094/1*UMwqWHEYVmkezmRaqyCh1g.png"></p>
+<p align = "center">
+    fonte: <a href="https://icons8.com/illustrations">icons8 </a>
+</p>
+<h2 id="introdução"><strong>Introdução</strong></h2>
+<p style='text-align: justify;'>
+Este artigo vai mostrar como foi o processo de desenvolvimento e o resultado de um programa em python, com o intuito de gerar um dataset simples, com um conjunto de frases extraídas do Twitter, por meio da API disponibilizada pelo próprio Twitter. No projeto foi usado conceitos básicos de Python e algumas bibliotecas como: Tweepy e NLTK.
+</p>
+<h2 id="problemática"><strong>Problemática</strong></h2>
+<p style='text-align: justify;'>
+Eu tenho um grande apreço pelo campo de Machine Learning, e por conta disso, iniciei meus estudos na área por um ramo com grande notoriedade atualmente, o NLP (Natural Lenguange Process). O projeto em maior escala, busca analisar tweets de um respectivo assunto e retorna quais são as emoções que se destacam em relação ao tema.
+</p>
+<p style='text-align: justify;'>
+Desta forma então, tive a ideia de fazer o meu próprio dataset, baseado em assuntos específicos que poderiam ser escolhidos por meio de um parâmetro. No meio do processo, fui desvendando algumas outras tecnologias que poderiam me auxilia na infra estrutura do projeto, entra elas está o Docker, e por conta disso acabei gastando um pouco mais de tempo para entender como a tecnologia funcionava, e documentar tudo isso em um artigo.( Link do Artigo ).
+Neste artigo irei me atentar somente ao script usado para captar os tweets e aloca-los em um arquivo CSV.
+</p>
+<h2 id="twitter-api"><strong>Twitter-API</strong></h2>
+<p style='text-align: justify;'>
+A API do Twitter tem um papel importante no projeto. Para ter acesso a ela, é preciso fazer uma requisição de conta para desenvolvedor, não demora muito, e as features que ela entrega são de uma infinidade de aplicações.
+Você pode se inscrever como desenvolvedor por esse link:
+</p>
+<p><a href="https://developer.twitter.com/en">developer.twitter.com</a></p>
+<p>Esse tutorial cobre todo o processo de inscrição:</p>
+<h2 id="modulos"><strong>Modulos</strong></h2>
+<p style='text-align: justify;'>
+O programa é constituido por 6 módulos, e um arquivo .ENV. A primeira imagem abaixo, mostra como o programa é executado. Por mais separados que as funções estejam, o módulo Stream é responsável por chamar os processos que limpam os dados e salvam em um arquivo CSV, tornando o fluxo de software em cascata.
+Na minha visão, ainda é confuso, porém vou fazer alguns ajustes e fazer algo parecido como a secunda imagem.
+</p>
+<p><img src="https://miro.medium.com/max/1094/1*JMgE9nhRaXrsrRMaAUCg6w.png" alt="https://miro.medium.com/max/1094/1*JMgE9nhRaXrsrRMaAUCg6w.png"></p>
+<p><img src="https://miro.medium.com/max/1094/1*XPSPooiPov10u6BokQhMpA.png" alt="https://miro.medium.com/max/1094/1*XPSPooiPov10u6BokQhMpA.png"></p>
+<p><strong><a href="http://main.py/">main.py</a></strong></p>
+<blockquote>
+<p>É responsável por comandar todos os outros módulos.</p>
+</blockquote>
+<p><strong>call_stream.py</strong></p>
+<blockquote>
+<p>Unicamente invocado para fazer as chamadas de ativação da stream.</p>
+</blockquote>
+<p><strong><a href="http://stream.py/">stream.py</a></strong></p>
+<blockquote>
+<p>O módulo é ativado e tem uma função call back que retorna todo tweet que chega na pesquisa.</p>
+</blockquote>
+<p><strong><a href="http://auth.py/">auth.py</a></strong></p>
+<blockquote>
+<p>Unicamente para autenticar as chaves da API.</p>
+</blockquote>
+<p><strong>aux_mod.py</strong></p>
+<blockquote>
+<p>São funções que auxiliam módulos maiores, retornam listas de pontuação, stopwords e strings tokenizadas.</p>
+</blockquote>
+<p><strong>twitter_data_cleaner.py</strong></p>
+<blockquote>
+<p>Esse módulo remove todas as informações que não são utilizados para a analise:</p>
+</blockquote>
+<ul>
+<li>remove_stopwords</li>
+<li>remove_user</li>
+<li>remove_URL</li>
+<li>remove_emoji</li>
+<li>remove_hashtag</li>
+<li>remove_punct</li>
+</ul>
+<p><strong>config.env</strong></p>
+<blockquote>
+<p>As chaves de acesso da API do twitter e a palavra chave a ser pesquisada, podem ser acessadas por meio desse arquivo.</p>
+</blockquote>
+<h2 id="io"><strong>I/O</strong></h2>
+<p><strong>Input</strong></p>
+<p style='text-align: justify;'>
+No arquivo config.env é possível editar a palavra que quer basear seu dataset em WORDKEY.
+As outras variáveis são chaves que são disponibilizadas pela API do Twitter, e são necessárias no processo de autenticação.
+</p>
+<pre><code>WORDKEY=CONSUMER_KEY=CONSUMER_SECRET_KEY=ACESS_TOKEN= ACESS_SECRET_TOKEN=
+</code></pre><p><strong>Output</strong></p>
+<p style='text-align: justify;'>
+O arquivo cria um arquivo CSV e popula o arquivo com os tweets que vão chegando, até que sofra uma interrupção do teclado (Ctrl+C).
+</p>
+<h2 id="conclusão"><strong>Conclusão</strong></h2>
+<p style='text-align: justify;'>
+Tudo está muito cru, e a ideia justamente é disponibilizar o repositório para que outras pessoas possam dar opiniões sobre quais características podem ter mais relevância nas técnicas usadas em PLN, como por exemplo a localização do usuário ou o horário de publicação do tweet.
+</p>
+<p style='text-align: justify;'>
+Até sendo mais criterioso, mudanças podem ser sugeridas na parte de Arquitetura de Software e Clean Code. O projeto pode ser uma grande base de dados para quem está começando na área.
+</p>
+<h2 id="link-do-repositório"><strong>Link do repositório</strong></h2>
+<p><a href="https://github.com/otaviodantas/NLP-generator-dataset">github.com</a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/tags/python/">Python</a></span>
+        <span class="tag"><a href="https://otaviodantas.com/tags/machine-learning/">Machine Learning</a></span>
+        <span class="tag"><a href="https://otaviodantas.com/tags/nlp/">NLP</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://otaviodantas.com/categories/development/">Development</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://otaviodantas.com/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>
